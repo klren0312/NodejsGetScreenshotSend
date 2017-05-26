@@ -1,0 +1,2 @@
+# NodejsGetScreenshotSend
+Nodejs获取桌面截图，并定时发送给指定邮箱
