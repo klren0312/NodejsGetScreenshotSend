@@ -70,32 +70,32 @@ screenshot()
 >看了官方的example才知道，图片要写到下面的attachments中，并提供cid，给上面html中的img调用。
 
 ```
-		var message = {
-			from:"发送邮件地址",
-			to:"接受邮件地址",
-			subject:"桌面截图",
-			html:'桌面截图：<img src="cid:test"/>',
-			//附加文件，提供cid给上面的img调用
-			attachments:[
-        		{
-		            filename: 'out',
-		            path: __dirname + '/out.jpg',
-		            cid: 'test' // should be as unique as possible
-				}
-			]
+var message = {
+	from:"发送邮件地址",
+	to:"接受邮件地址",
+	subject:"桌面截图",
+	html:'桌面截图：<img src="cid:test"/>',
+	//附加文件，提供cid给上面的img调用
+	attachments:[
+     	{
+           filename: 'out',
+           path: __dirname + '/out.jpg',
+           cid: 'test' // should be as unique as possible
 		}
+	]
+}
 ```
 
 ## 10.发送邮件
 ```
-		transporter.sendMail(message, (error, info) => {
-		    if (error) {
-		        console.log('Error occurred');
-		        console.log(error.message);
-		        return;
-		    }
-		    console.log('Message sent successfully!');
-		    console.log('Server responded with "%s"', info.response);
-		    transporter.close();
-		});
+transporter.sendMail(message, (error, info) => {
+    if (error) {
+        console.log('Error occurred');
+        console.log(error.message);
+        return;
+    }
+    console.log('Message sent successfully!');
+    console.log('Server responded with "%s"', info.response);
+    transporter.close();
+});
 ```
