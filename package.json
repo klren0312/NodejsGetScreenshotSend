@@ -1,0 +1,16 @@
+{
+  "name": "nodescreen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-schedule": "^1.2.3",
+    "nodemailer": "^4.0.1",
+    "screenshot-desktop": "^1.1.0"
+  }
+}
