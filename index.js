@@ -28,7 +28,7 @@ schedule.scheduleJob(rule, function(){
 			}
 			console.log('written to out.jpg')
 		})
-		var message = {
+		const message = {
 			from:"",
 			to:"",
 			subject:"桌面截图",
@@ -44,12 +44,10 @@ schedule.scheduleJob(rule, function(){
 		// send
 		transporter.sendMail(message, (error, info) => {
 			if (error) {
-				console.log('Error occurred')
-				console.log(error.message)
+				console.log('Error occurred', error.message)
 				return
 			}
-			console.log('Message sent successfully!')
-			console.log('Server responded with "%s"', info.response)
+			console.log(`Message sent successfully! Server responded with "${info.response}"`)
 			transporter.close()
 		})
 	}).catch((err) => {
